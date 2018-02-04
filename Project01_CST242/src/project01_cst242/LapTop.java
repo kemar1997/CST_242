@@ -6,4 +6,8 @@ package project01_cst242;
  */
 public final class LapTop extends Computer {
     
+    @Override
+    public double getComputerPrice() {
+        return 0;
+    }
 }

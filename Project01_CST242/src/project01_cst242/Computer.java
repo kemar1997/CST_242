@@ -95,6 +95,33 @@ public abstract class Computer {
     }
     
     /**
+     * Calculates the processor price using if processing and returning it.
+     * 
+     * @return The price of computer processor
+     */
+    public double getProcessorPrice() {
+        return 0;
+    }
+    
+    /**
+     * Calculates the memory price using if processing and returning it.
+     * 
+     * @return The price of computer memory
+     */
+    public double getMemoryPrice() {
+        return 0;
+    }
+    
+    /**
+     * Calculates the price of an optical drive and returns it
+     * 
+     * @return The price of an optical drive
+     */
+    public double getOpticalDrivePrice() {
+        return 0;
+    }
+    
+    /**
      * Returns the processor speed of the computer.
      * 
      * @return The computer's processor speed.
@@ -111,5 +138,22 @@ public abstract class Computer {
     public int getMemorySize() {
         return memorySize;
     }
+    
+    /**
+     * Returns the optical drive type of the computer.
+     * 
+     * @return The computer's optical drive type
+     */
+    public String getOpticalDriveType() {
+        return opticalDriveType;
+    }
+    
+    /**
+     * Abstract method definition to calculate the computer price depending on
+     * the components prices.
+     * 
+     * @return Price of a computer
+     */
+    public abstract double getComputerPrice();
     
 }
