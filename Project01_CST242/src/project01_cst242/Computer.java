@@ -20,6 +20,9 @@ public abstract class Computer {
     private int hardDriveSize; // Computer's Hard Drive Size
     private String opticalDriveType; // Computer's Optical Drive Type
     
+    /**
+     * This constructor gives default values to the instance variables.
+     */
     public Computer() {
         this(0.0, 0, 0, "");
     }
@@ -42,8 +45,9 @@ public abstract class Computer {
     }
 
     /**
+     * Sets the processor speed accordingly using if processing.
      * 
-     * @param processorSpeed 
+     * @param processorSpeed the computer's processor speed
      */
     public void setProcessorSpeed(double processorSpeed) {
         if (processorSpeed == 1.8 || processorSpeed == 2.0 || processorSpeed ==
@@ -55,8 +59,9 @@ public abstract class Computer {
     }
 
     /**
+     * Sets the memory size accordingly using if processing.
      * 
-     * @param memorySize 
+     * @param memorySize the size of the computer's memory
      */
     public void setMemorySize(int memorySize) {
         if (memorySize == 2 || memorySize == 3 || memorySize == 4 || memorySize
@@ -66,8 +71,9 @@ public abstract class Computer {
     }
 
     /**
+     * Sets the hard drive size accordingly using if processing.
      * 
-     * @param hardDriveSize 
+     * @param hardDriveSize the computer's hard drive size
      */
     public void setHardDriveSize(int hardDriveSize) {
         if (hardDriveSize == 160 || hardDriveSize == 250 || hardDriveSize == 
@@ -77,8 +83,11 @@ public abstract class Computer {
     }
 
     /**
+     * Sets the optical drive type, checking that appropriate names are
+     * inputted using an array list. Then applying the result to its instance
+     * variable using an if statement.
      * 
-     * @param opticalDriveType 
+     * @param opticalDriveType the type of optical drive of a computer
      */
     public void setOpticalDriveType(String opticalDriveType) {
         // String constants for valid optical drive types
@@ -132,9 +141,9 @@ public abstract class Computer {
     }
     
     /**
-     * Calculates the price of an optical drive and returns it
+     * Calculates the price of an optical drive and returns it.
      * 
-     * @return The price of an optical drive
+     * @return The price of an optical drive.
      */
     public double getOpticalDrivePrice() {
         switch (opticalDriveType) {
@@ -151,6 +160,11 @@ public abstract class Computer {
         return 0;
     }
     
+    /**
+     * Calculates the price of a hard drive and returns it.
+     * 
+     * @return The price of a hard drive.
+     */
     public double getHardDrivePrice() {
         switch (hardDriveSize) {
             case 160:
@@ -234,6 +248,14 @@ public abstract class Computer {
      */
     public abstract double getDisplayPrice();
     
+    /**
+     * Returns a string representation of all the components chosen by a user,
+     * then takes all of the components based on their price values and sums it
+     * all together and outputs the price of the entire system along with the 
+     * components chosen.
+     * 
+     * @return 
+     */
     @Override
     public String toString() {
         StringBuilder output = new StringBuilder();
