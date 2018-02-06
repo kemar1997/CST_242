@@ -100,6 +100,16 @@ public abstract class Computer {
      * @return The price of computer processor
      */
     public double getProcessorPrice() {
+        if (processorSpeed == 1.8) {
+            return 75.00;
+        } else if (processorSpeed == 2.0) {
+            return 82.00;
+        } else if (processorSpeed == 2.5) {
+            return 87.99;
+        } else if (processorSpeed == 3.0) {
+            return 95.99;
+        }
+        
         return 0;
     }
     
@@ -109,6 +119,15 @@ public abstract class Computer {
      * @return The price of computer memory
      */
     public double getMemoryPrice() {
+        switch (memorySize) {
+            case 2:
+                return 40.00;
+            case 3:
+                return 60.00;
+            case 4:
+                return 80.00;
+        }
+        
         return 0;
     }
     
@@ -118,6 +137,31 @@ public abstract class Computer {
      * @return The price of an optical drive
      */
     public double getOpticalDrivePrice() {
+        switch (opticalDriveType) {
+            case "CD-RW":
+                return 20.00;
+            case "DVD":
+                return 30.00;
+            case "Blu-ray Combo Drive":
+                return 40.00;
+            default:
+                break;
+        }
+        
+        return 0;
+    }
+    
+    public double getHardDrivePrice() {
+        switch (hardDriveSize) {
+            case 160:
+                return 25.00;
+            case 250:
+                return 50.00;
+            case 500:
+                return 75.00;
+            default:
+                break;
+        } 
         return 0;
     }
     
@@ -142,18 +186,79 @@ public abstract class Computer {
     /**
      * Returns the optical drive type of the computer.
      * 
-     * @return The computer's optical drive type
+     * @return The computer's optical drive type.
      */
     public String getOpticalDriveType() {
         return opticalDriveType;
     }
     
     /**
-     * Abstract method definition to calculate the computer price depending on
-     * the components prices.
+     * Returns the size of the hard drive.
      * 
-     * @return Price of a computer
+     * @return The size of the hard drive.
+     */
+    public int getHardDriveSize() {
+        return hardDriveSize;
+    }
+    
+    /**
+     * Abstract method definition to calculate the computer price depending on
+     * the components prices and the base price of each computer.
+     * 
+     * @return Base price of a computer and prices of the components into one.
      */
     public abstract double getComputerPrice();
+    
+    /**
+     * Abstract method that sets a value for a computer's display whether it be
+     * for a laptop or desktop.
+     * 
+     * @param displaySize the size of a computer's display (laptop or desktop)
+     */
+    public abstract void setDisplaySize(int displaySize);
+    
+    /**
+     * Abstract method that returns the display size for either a laptop or a 
+     * desktop.
+     * 
+     * @return The size of the computer's display.
+     */
+    public abstract int getDisplaySize();
+    
+    /**
+     * Abstract method which displays the price of the computer's display. Also
+     * allows the toString() method to call the subclass getDisplayPrice()
+     * method.
+     * 
+     * @return Price of a computer display.
+     */
+    public abstract double getDisplayPrice();
+    
+    @Override
+    public String toString() {
+        StringBuilder output = new StringBuilder();
+        
+        output.append("Processor Speed: ");
+        output.append(getProcessorSpeed());
+        output.append("\n");
+        output.append("Memory Size: ");
+        output.append(getMemorySize());
+        output.append("\n");
+        output.append("Optical Drive Type: ");
+        output.append(getOpticalDriveType());
+        output.append("\n");
+        output.append("Hard Drive Size: ");
+        output.append(getHardDriveSize());
+        output.append("\n");
+        output.append("Display Size: ");
+        output.append(getDisplaySize());
+        output.append("\n");
+        output.append("Price: $");
+        output.append(getComputerPrice());
+        output.append("\n");
+        
+        
+        return output.toString();
+    }
     
 }
