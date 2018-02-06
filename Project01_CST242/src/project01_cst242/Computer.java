@@ -262,19 +262,19 @@ public abstract class Computer {
         
         output.append("Processor Speed: ");
         output.append(getProcessorSpeed());
-        output.append("\n");
+        output.append(" gigahertz \n");
         output.append("Memory Size: ");
         output.append(getMemorySize());
-        output.append("\n");
+        output.append(" Gb \n");
         output.append("Optical Drive Type: ");
         output.append(getOpticalDriveType());
         output.append("\n");
         output.append("Hard Drive Size: ");
         output.append(getHardDriveSize());
-        output.append("\n");
+        output.append(" gb \n");
         output.append("Display Size: ");
         output.append(getDisplaySize());
-        output.append("\n");
+        output.append(" inch \n");
         output.append("Price: $");
         output.append(getComputerPrice());
         output.append("\n");
