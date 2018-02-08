@@ -41,7 +41,7 @@ public class JavaFXApplication2 extends Application
     private Label lblBase;
     private Label lblExtra;
     private Label lblTotal;
-    private Label lblTitle;
+    private Label lblHeader;
 
     private VBox vBoxRadio;
     private VBox vBoxCheck;
@@ -64,10 +64,10 @@ public class JavaFXApplication2 extends Application
     {
         // Make the header Label and format using CSS formatting
 
-        lblTitle = new Label("Order Your Car Today!");
-        lblTitle.setMinWidth(370);
-        lblTitle.setAlignment(Pos.CENTER);
-        lblTitle.setStyle("-fx-font-size: 28px; -fx-background-color: rgb(104, 50, 0); -fx-text-fill: white;");
+        lblHeader = new Label("Order Your Car Today!");
+        lblHeader.setMinWidth(350);
+        lblHeader.setAlignment(Pos.CENTER);
+        lblHeader.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 28px; -fx-text-fill: white; -fx-background-color: rgb(104, 50, 0); -fx-font-weight: bold; ");
 
         // Create the RadioButtons and set their ToggleGroup
         // Precheck the first RadioButton ("Base Model") as the default
@@ -122,16 +122,20 @@ public class JavaFXApplication2 extends Application
         vBoxResults.setPadding( new Insets(10) );
         vBoxResults.setStyle("-fx-background-color: cornsilk; -fx-border-color: black; -fx-border-radius: 10;");
 
-        // Instantiate the GridPane, format it and insert the heading Label into the first row
-        // as well as the 'input' and 'result' VBoxes into the second row
+        // Instantiate the GridPane and format it
+        // Insert the heading Label into the first row
+        // Insert the "input" and "result" VBoxes into the second row
 
         GridPane grid = new GridPane();
 
-        grid.addRow(0, lblTitle);
-        GridPane.setColumnSpan(lblTitle, 3);
-        GridPane.setHalignment(lblTitle, HPos.CENTER);
+        grid.addRow(0, lblHeader);
+        GridPane.setColumnSpan(lblHeader, 3);
+        GridPane.setHalignment(lblHeader, HPos.CENTER);
 
         grid.addRow(1, vBoxInputs, vBoxResults);
+
+        // Instantiate the Scene, set the properties for the Stage and set the Scene into it
+        // Show the PrimaryStage
        
         Scene scene = new Scene(grid, 350, 310);
 

@@ -37,7 +37,7 @@ public class JavaFXApplication1 extends Application
 
     private Button btnCalculate;
 
-    private Label lblTitle;
+    private Label lblHeader;
     private Label lblBase;
     private Label lblExtra;
     private Label lblTotal;
@@ -58,11 +58,11 @@ public class JavaFXApplication1 extends Application
     {
         // Make the heading Label and format
 
-        lblTitle = new Label("Order Your Car Today!");
-        lblTitle.setMinWidth(580);
-        lblTitle.setAlignment(Pos.CENTER);
-        lblTitle.setFont( new Font("Comic Sans MS", 28) );
-        lblTitle.setTextFill( Color.web("#683200") );
+        lblHeader = new Label("Order Your Car Today!");
+        lblHeader.setMinWidth(580);
+        lblHeader.setAlignment(Pos.CENTER);
+        lblHeader.setFont( new Font(28) );
+        lblHeader.setTextFill( Color.web("#683200") );
         
         // Create the RadioButtons; set their ToggleGroup and event handler
         // Precheck the first RadioButton ("Base Model") as the default
@@ -108,17 +108,20 @@ public class JavaFXApplication1 extends Application
         vBoxResults = new VBox(20, lblBase, lblExtra, lblTotal);
         vBoxResults.setPadding( new Insets(10) );
 
-        // Instantiate the GridPane, format and insert nodes and layout objects into it
+        // Instantiate the GridPane
+        // Insert the heading Label into the first row
+        // Insert the "radio button" and "check box" and "result" VBoxes into the second row
 
         GridPane grid = new GridPane();
 
-        grid.addRow(0, lblTitle);
-        GridPane.setColumnSpan(lblTitle, 3);
-        GridPane.setHalignment(lblTitle, HPos.CENTER);
+        grid.addRow(0, lblHeader);
+        GridPane.setColumnSpan(lblHeader, 3);
+        GridPane.setHalignment(lblHeader, HPos.CENTER);
 
         grid.addRow(1, vBoxRadio, vBoxCheck, vBoxResults);
 
         // Instantiate the Scene, set the properties for the Stage and set the Scene into it
+        // Show the PrimaryStage
 
         Scene scene = new Scene(grid, 600, 185);
 
