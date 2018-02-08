@@ -67,7 +67,10 @@ public class JavaFXApplication2 extends Application
         lblHeader = new Label("Order Your Car Today!");
         lblHeader.setMinWidth(350);
         lblHeader.setAlignment(Pos.CENTER);
-        lblHeader.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 28px; -fx-text-fill: white; -fx-background-color: rgb(104, 50, 0); -fx-font-weight: bold; ");
+        lblHeader.setStyle("-fx-font-family: 'Comic Sans MS'; "
+                + "-fx-font-size: 28px; -fx-text-fill: white; "
+                + "-fx-background-color: rgb(104, 50, 0); "
+                + "-fx-font-weight: bold; ");
 
         // Create the RadioButtons and set their ToggleGroup
         // Precheck the first RadioButton ("Base Model") as the default
