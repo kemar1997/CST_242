@@ -76,6 +76,7 @@ public class JavaFXApplication3 extends Application
         sliderHours.setShowTickMarks(true);
         sliderHours.setShowTickLabels(true);
         sliderHours.setMajorTickUnit(5.0);
+        sliderHours.setMinorTickCount(4);
         sliderHours.setPrefWidth(350);
         sliderHours.setOnMouseDragged( e -> updateHoursSlider(e) );
         
