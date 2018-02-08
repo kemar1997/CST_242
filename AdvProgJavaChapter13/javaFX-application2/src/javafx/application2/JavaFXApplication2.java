@@ -132,7 +132,7 @@ public class JavaFXApplication2 extends Application
         GridPane grid = new GridPane();
 
         grid.addRow(0, lblHeader);
-        GridPane.setColumnSpan(lblHeader, 3);
+        GridPane.setColumnSpan(lblHeader, 2);
         GridPane.setHalignment(lblHeader, HPos.CENTER);
 
         grid.addRow(1, vBoxInputs, vBoxResults);
