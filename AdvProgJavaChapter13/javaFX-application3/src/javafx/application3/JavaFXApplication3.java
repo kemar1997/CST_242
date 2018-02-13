@@ -94,6 +94,7 @@ public class JavaFXApplication3 extends Application
         sliderRate.setShowTickMarks(true);
         sliderRate.setShowTickLabels(true);
         sliderRate.setMajorTickUnit(3.0);
+        sliderRate.setMinorTickCount(2);
         sliderRate.setPrefWidth(350);
         sliderRate.setOnMouseDragged( e -> updateRateSlider(e) );
         
@@ -127,6 +128,7 @@ public class JavaFXApplication3 extends Application
         // Insert the "slider" and "result" VBoxes into the second row
         
         GridPane grid = new GridPane();
+        grid.setStyle("-fx-background-color: lavender;");
 
         grid.addRow(0, lblHeader);
         GridPane.setColumnSpan(lblHeader, 2);
@@ -137,7 +139,7 @@ public class JavaFXApplication3 extends Application
         // Instantiate the Scene, set the properties for the Stage and set the Scene into it
         // Show the PrimaryStage
         
-        Scene scene = new Scene(grid, 590, 200);
+        Scene scene = new Scene(grid, 590, 185);
         
         primaryStage.setTitle("Payee Calculator");
         primaryStage.setResizable(false);
