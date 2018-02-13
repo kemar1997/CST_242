@@ -101,7 +101,7 @@ public class LoanPaymentCalculator extends Application {
          scene.getStylesheets().add(getClass().getResource("LoanPaymentCalculator.css")
                 .toString());
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Loan Payment Calculator");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -117,7 +117,7 @@ public class LoanPaymentCalculator extends Application {
         int loanAmount = Integer.parseInt( amountOfLoan.getText() );
         double rateOfInterest = Double.parseDouble( interestRate.getText() );
         double monthlyInterestRate = rateOfInterest / 12000;
-        double a = 0;
+        double a;
         double result = 0;
         if ( fiveYears.isSelected() ) {
             a = loanAmount * monthlyInterestRate / ( 1 - (1 / Math.pow(1 + monthlyInterestRate, 5 * 12)));
