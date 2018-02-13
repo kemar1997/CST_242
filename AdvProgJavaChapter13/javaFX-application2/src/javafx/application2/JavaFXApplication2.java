@@ -67,10 +67,7 @@ public class JavaFXApplication2 extends Application
         lblHeader = new Label("Order Your Car Today!");
         lblHeader.setMinWidth(350);
         lblHeader.setAlignment(Pos.CENTER);
-        lblHeader.setStyle("-fx-font-family: 'Comic Sans MS'; "
-                + "-fx-font-size: 28px; -fx-text-fill: white; "
-                + "-fx-background-color: rgb(104, 50, 0); "
-                + "-fx-font-weight: bold; ");
+        lblHeader.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 28px; -fx-text-fill: white; -fx-background-color: rgb(104, 50, 0); -fx-font-weight: bold;");
 
         // Create the RadioButtons and set their ToggleGroup
         // Precheck the first RadioButton ("Base Model") as the default
@@ -109,8 +106,8 @@ public class JavaFXApplication2 extends Application
         // Place the Button into the third VBox
 
         btnCalculate = new Button("    Calculate    ");
-        btnCalculate.setStyle("-fx-background-color: tan; -fx-font-weight: bold; -fx-text-fill: white;");
-        btnCalculate.setOnAction( e -> handleClickAction(e) );
+        btnCalculate.setStyle("-fx-text-fill: white; -fx-background-color: tan; -fx-font-weight: bold;");
+        btnCalculate.setOnAction( e -> calculateCarPrice(e) );
         
         // Create the output Labels and place them into the third VBox along with the Button
         // Format the VBox using CSS formatting
@@ -154,7 +151,7 @@ public class JavaFXApplication2 extends Application
      * 
      * @param event the ActionEvent parameter
      */
-     private void handleClickAction(ActionEvent event) 
+     private void calculateCarPrice(ActionEvent event) 
      {
          int base, extra = 0;
 
