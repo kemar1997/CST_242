@@ -29,7 +29,7 @@ public class JavaFXApplication4 extends Application
     private ObservableList<String> titles;
     private ObservableList<Book> books;
     
-    private ListView<Book> listView;
+    private ListView listView;
     
     private VBox vBoxListView;
     private VBox vBoxResults;
