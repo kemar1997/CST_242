@@ -26,7 +26,7 @@ public class Strings3
         System.out.print("Enter the second string > ");
         String s2 = new String( reader.nextLine() );
 
-        System.out.print("Case sensitive:  ");
+        output.append("Case sensitive:  ");
 
         if ( s1.equals(s2) )
         {
