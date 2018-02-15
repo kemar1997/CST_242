@@ -24,11 +24,9 @@ public class Strings2
         System.out.print("Enter the string > ");
         String s1 = new String( reader.nextLine() );
 
-        int stringLength = s1.length();
-
         System.out.print(
             "Enter character location from zero (0) up to "
-            + (stringLength - 1) + " > " );
+            + (s1.length() - 1) + " > " );
 
         int stringPosition = reader.nextInt();
 
