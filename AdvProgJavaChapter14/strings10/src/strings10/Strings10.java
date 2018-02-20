@@ -29,6 +29,8 @@ public class Strings10
         output.append(s1);
         output.append("\ns2: ");
         output.append(s2);
+        output.append("\nThe replace method: ");
+        output.append(s2.replace('l', 'Z'));
         
         System.out.println(output);
     }

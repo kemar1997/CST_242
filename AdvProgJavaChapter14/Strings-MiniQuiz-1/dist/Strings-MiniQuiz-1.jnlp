@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Strings-MiniQuiz-1.jar" size="2366" download="eager" />
+    <jar href="Strings-MiniQuiz-1.jar" size="3356" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Strings-MiniQuiz-1" >
     <param name="requiredFXVersion" value="2.2+"/>
