@@ -10,13 +10,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.VBox;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /**
- *
- * @author Carl
+ * A JavaFX application that gets information from a user for a new account.  It 
+ * demonstrates validation with regular expressions and the String.matches() method.
+ * 
+ * @author Prof. Carl B. Struck
+ * @version Copyright (c) SCCC Spring 2018 - SCCC West 
  */
 public class RegularExpressions1 extends Application 
 {
@@ -44,14 +47,16 @@ public class RegularExpressions1 extends Application
     TextField textFieldEmail;
     TextField textFieldDOB;
     
-    VBox vBoxLabels;
-    VBox vBoxTextFields;
-    VBox vBoxResults;
-    
     TextArea textAreaResults;
     
     Button buttonResults;
     
+    /**
+     * Creates a JavaFX window with TextFields and PasswordFields that gets 
+     * information from a user for a new account.
+     * 
+     * @param primaryStage a Stage window object
+     */
     @Override
     public void start(Stage primaryStage) 
     {
@@ -61,19 +66,23 @@ public class RegularExpressions1 extends Application
         labelHeader.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 24px; -fx-text-fill: white; -fx-background-color: midnightblue; -fx-font-weight: bold;");
         
         labelFirstName = new Label("First name:");
+        labelFirstName.setPrefWidth(175);
         labelLastName = new Label("Last name:");
+        labelLastName.setPrefWidth(175);
         labelUserID = new Label("User ID:");
+        labelUserID.setPrefWidth(175);
         labelPassword = new Label("Password (>= 8 chars):");
+        labelPassword.setPrefWidth(175);
         labelPasswordAgain = new Label("Password again:");
+        labelPasswordAgain.setPrefWidth(175);
         labelPhone = new Label("Phone:");
+        labelPhone.setPrefWidth(175);
         labelSocSecNumber = new Label("Social security #:");
+        labelSocSecNumber.setPrefWidth(175);
         labelEmail = new Label("E-mail:");
+        labelEmail.setPrefWidth(175);
         labelDOB = new Label("Date of birth:");
-        
-        vBoxLabels = new VBox(15, labelFirstName, labelLastName, labelUserID, 
-                labelPassword, labelPasswordAgain, labelPhone, labelSocSecNumber, 
-                labelEmail, labelDOB);
-        vBoxLabels.setPadding( new Insets(10) );
+        labelDOB.setPrefWidth(175);
         
         textFieldFirstName = new TextField();
         textFieldLastName = new TextField();
@@ -85,20 +94,31 @@ public class RegularExpressions1 extends Application
         textFieldEmail = new TextField();
         textFieldDOB = new TextField();
         
-        vBoxTextFields = new VBox(5, textFieldFirstName, textFieldLastName, 
-                textFieldUserID, passwordFieldPassword, passwordFieldPasswordAgain, 
-                textFieldPhone, textFieldSocSecNumber, textFieldEmail, textFieldDOB);
-        vBoxTextFields.setPadding( new Insets(10) );
+        GridPane gridInputs = new GridPane();
+        gridInputs.setVgap(5);
+        
+        gridInputs.addRow(0, labelFirstName, textFieldFirstName);
+        gridInputs.addRow(1, labelLastName, textFieldLastName);
+        gridInputs.addRow(2, labelUserID, textFieldUserID);
+        gridInputs.addRow(3, labelPassword, passwordFieldPassword);
+        gridInputs.addRow(4, labelPasswordAgain, passwordFieldPasswordAgain);
+        gridInputs.addRow(5, labelPhone, textFieldPhone);
+        gridInputs.addRow(6, labelSocSecNumber, textFieldSocSecNumber);
+        gridInputs.addRow(7, labelEmail, textFieldEmail);
+        gridInputs.addRow(8, labelDOB, textFieldDOB);
+        
+        VBox vBoxInputs = new VBox(5, gridInputs);
+        vBoxInputs.setPadding( new Insets(10) );
         
         textAreaResults = new TextArea();
-        textAreaResults.setPrefSize(250, 300);
+        textAreaResults.setPrefSize(340, 325);
         textAreaResults.setEditable(false);
         
         buttonResults = new Button("Submit");
         buttonResults.setStyle("-fx-text-fill: white; -fx-background-color: black; -fx-font-weight: bold;");
         buttonResults.setOnAction( e -> createAccount(e) );
 
-        vBoxResults = new VBox(10, textAreaResults, buttonResults);
+        VBox vBoxResults = new VBox(10, textAreaResults, buttonResults);
         vBoxResults.setPadding( new Insets(10) );
         vBoxResults.setAlignment(Pos.CENTER);
         
@@ -107,7 +127,7 @@ public class RegularExpressions1 extends Application
         grid.addRow(0, labelHeader);
         GridPane.setColumnSpan(labelHeader, 3);
 
-        grid.addRow(1, vBoxLabels, vBoxTextFields, vBoxResults);
+        grid.addRow(1, vBoxInputs, vBoxResults);
         
         Scene scene = new Scene(grid, 750, 375);
         
@@ -117,7 +137,9 @@ public class RegularExpressions1 extends Application
     }
 
     /**
-     * Evaluates ... .
+     * Evaluates input from the TextField and PasswordField input boxes against
+     * the static method of class ValidateInput.  Displays error messages inside
+     * a TextArea object.
      * 
      * @param event the ActionEvent parameter
      */
