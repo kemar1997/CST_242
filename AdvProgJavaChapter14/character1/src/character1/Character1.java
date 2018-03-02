@@ -11,7 +11,9 @@ import java.util.Scanner;
 public class Character1 
 {
     /**
-     * ???.
+     * Gets two char values from the Scanner and copies one of those char values
+     * to a third char, examines those char values using methods of the Character
+     * class, and displays the results to the console.
      * 
      * @param args the command line String[] array arguments
      */
@@ -64,5 +66,4 @@ public class Character1
 
         System.out.println(output);
     }
-    
 }

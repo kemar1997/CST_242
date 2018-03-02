@@ -1,8 +1,11 @@
 package regular.expressions.pkg1;
 
 /**
- *
- * @author Carl
+ * The ValidateInput class contains a series of static methods that compare
+ * Strings to regular expressions in the String.matches() method.
+ * 
+ * @author Prof. Carl B. Struck
+ * @version Copyright (c) SCCC Spring 2018 - SCCC West 
  */
 public class ValidateInput 
 {
@@ -54,7 +57,7 @@ public class ValidateInput
      */
     public static boolean validatePassword(String password)
     {
-        return password.matches(".{8,}");
+        return password.matches("\\S{8,}");
     }
 
     /**

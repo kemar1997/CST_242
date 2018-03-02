@@ -126,6 +126,25 @@ public class StringsMiniQuiz1 extends Application {
         output.append("\ns1 char at 3 is ");
         output.append( s1.charAt(2) );
         
+        // Test toUpperCase() and toLowerCase
+        output.append("\ns1 converted to lowercase: ");
+        output.append( s1.toLowerCase() );
+        output.append("\ns1 converted to uppercase: ");
+        output.append( s1.toUpperCase() );
+        
+        // Test the trim() method
+        output.append("\ns1 trimmed is |");
+        output.append( s1.trim() );
+        output.append("|");
+        
+        /*
+        The split() Method
+        - Splits a String object into tokens
+        - format: stringObject.split(regExpession);
+        - regExpression = a demiliter (could be a space or comma)
+        - ex: String[] t1 = s1.split(" ");
+        */
+        
         
         tArea.setText( output.toString() );
     }
