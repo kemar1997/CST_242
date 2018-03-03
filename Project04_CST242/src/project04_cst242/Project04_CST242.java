@@ -2,7 +2,6 @@
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -23,7 +22,7 @@ import javafx.stage.Stage;
  * any other invalid input); then perform the appropriate coding or decoding
  * and display the result.
  *
- * @author Kemar, Woonnie & Sophia
+ * @author Kemar, Woonnie, Sophia
  */
 public class Project04_CST242 extends Application {
     
@@ -134,6 +133,12 @@ public class Project04_CST242 extends Application {
         "---" , ".--." , "--.-" ,  ".-." , "..." , "-" , "..-" , "...-" ,
         ".--" , "-..-" , "-.--" , "--.."};
     
+    /**
+     * Checks if the phrase entered consists of Morse code only then decodes it
+     * into the English-language equivalent
+     * 
+     * @param event the ActionEvent parameter
+     */
     private void decode(ActionEvent event) {
         StringBuilder output = new StringBuilder();
         
