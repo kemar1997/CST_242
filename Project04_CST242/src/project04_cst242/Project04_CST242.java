@@ -49,18 +49,23 @@ public class Project04_CST242 extends Application {
         lblHeader = new Label("Morse Code");
         lblHeader.setMinWidth(750);
         lblHeader.setAlignment(Pos.CENTER);
+        lblHeader.getStyleClass().add("lblHeader");
         
         lblEnglishPhrase = new Label("Enter an English Phrase:");
         lblMorseCodePhrase = new Label("Enter a phrase in Morse Code:");
+        lblEnglishPhrase.getStyleClass().addAll("labels");
+        lblMorseCodePhrase.getStyleClass().addAll("labels");
         
         vBoxLabels = new VBox(15, lblEnglishPhrase, lblMorseCodePhrase );
         vBoxLabels.setPadding( new Insets(10) );
+        vBoxLabels.getStyleClass().addAll("vBox");
         
         tfEnglishPhrase = new TextField();
         tfMorseCodePhrase = new TextField();
         
         vBoxTextFields = new VBox(5, tfEnglishPhrase, tfMorseCodePhrase);
         vBoxTextFields.setPadding( new Insets(10) );
+        vBoxTextFields.getStyleClass().addAll("vBox");
         
         taResults = new TextArea();
         taResults.setPrefSize(250, 300);
@@ -74,6 +79,7 @@ public class Project04_CST242 extends Application {
         
         vBoxResults = new VBox(10, taResults, btnEncode, btnDecode);
         vBoxResults.setPadding( new Insets(10) );
+        vBoxResults.getStyleClass().addAll("vBox");
         
         
         GridPane grid = new GridPane();
@@ -83,6 +89,8 @@ public class Project04_CST242 extends Application {
         grid.addRow(1, vBoxLabels, vBoxTextFields, vBoxResults);
         
         Scene scene = new Scene(grid, 750, 375);
+        scene.getStylesheets().add(getClass().getResource("stylesheet.css")
+                .toString());
         
         primaryStage.setTitle("Morse Code Encoding / English Language Conversion");
         primaryStage.setScene(scene);
@@ -152,7 +160,7 @@ public class Project04_CST242 extends Application {
         if (output.toString().length() == 0) {
             String b = tfMorseCodePhrase.getText();
             
-            String[] words = b.split("|");
+            String[] words = b.split(" ");
             for (String word : words) {
                 String[] characters = word.split(" ");
                 

@@ -1,0 +1,24 @@
+/*
+Contains the styling for the JavaFX application.
+*/
+/* 
+    Created on : Mar 3, 2018, 2:08:38 PM
+    Author     : Kemar, Woonie, Sophia
+*/
+
+.lblHeader {
+    -fx-background-color: #7f9cab;
+    -fx-font: 28px "Comic Sans MS";
+    -fx-stroke: black;
+    -fx-stroke-width: 1;
+}
+
+.vBox {
+    -fx-background-color: #a47e67;
+}
+
+.labels {
+    -fx-font: 17px "Comic Sans MS";
+    -fx-text-fill: black;
+}
+
