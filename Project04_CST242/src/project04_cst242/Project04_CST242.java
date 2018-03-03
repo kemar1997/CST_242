@@ -109,7 +109,17 @@ public class Project04_CST242 extends Application {
         
         // Must encode the english phrase to Morse Code
         if (output.toString().length() == 0) {
-            output.append("Done");
+            String c = tfEnglishPhrase.getText().toLowerCase();
+            
+            for (int x = 0; x < english.length; x++) {
+                for (int y = 0; y < c.length(); y++) {
+                    if (english[x] == c.charAt(y)) {
+                        output.append(morse[x]);
+                        output.append(" ");
+                    }
+                }
+            }
+            output.append("\nDone");
         }
         
         taResults.setText( output.toString() );
@@ -137,13 +147,13 @@ public class Project04_CST242 extends Application {
         if (output.toString().length() == 0) {
             String b = tfMorseCodePhrase.getText();
             
-            String[] words = b.split("   ");
+            String[] words = b.split("|");
             for (String word : words) {
                 String[] characters = word.split(" ");
                 
                 for (String character : characters) {
-                    if (character.isEmpty()) {}
-                    for ( int m = 0; m < b.length(); m++ ) {
+                    if (character.isEmpty()) { continue; }
+                    for ( int m = 0; m < morse.length; m++ ) {
                         if (character.equals(morse[m])) {
                             output.append(english[m]);
                         }
