@@ -62,6 +62,7 @@ public class Project04_CST242 extends Application {
         
         tfEnglishPhrase = new TextField();
         tfMorseCodePhrase = new TextField();
+        tfMorseCodePhrase.setPadding( new Insets(15) );
         
         vBoxTextFields = new VBox(5, tfEnglishPhrase, tfMorseCodePhrase);
         vBoxTextFields.setPadding( new Insets(10) );
@@ -72,9 +73,11 @@ public class Project04_CST242 extends Application {
         taResults.setEditable(false);
         
         btnEncode = new Button("Encode");
+        btnEncode.setId("bevel-grey");
         btnEncode.setOnAction( e -> encode(e) );
         
         btnDecode = new Button("Decode");
+        btnDecode.setId("glass-grey");
         btnDecode.setOnAction( e -> decode(e) );
         
         vBoxResults = new VBox(10, taResults, btnEncode, btnDecode);
