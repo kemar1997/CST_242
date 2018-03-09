@@ -86,7 +86,7 @@ public class GenericCollections2 extends Application
              list2.add(state);
          }
          
-         // Add the second LinkedList to the first LinkedList and print the list
+         // Add the second LinkedList to the end of the first LinkedList and print the list
          list1.addAll(list2);
          list2 = null;
          
@@ -113,11 +113,11 @@ public class GenericCollections2 extends Application
      /**
       * Outputs the elements of the LinkedList to a StringBuilder object.
       * 
-      * @param list the LinkedList of Strings (states)
+      * @param list1 the LinkedList of Strings (states)
       */
-     private void printList( List<String> list )
+     private void printList( List<String> list1 )
      {
-         for (String state : list)
+         for (String state : list1)
          {
              output.append(state);
              output.append("  ");
@@ -157,11 +157,11 @@ public class GenericCollections2 extends Application
      /**
       * Outputs the elements of the LinkedList in reverse order to a StringBuilder object.
       * 
-      * @param list the LinkedList of Strings (states) 
+      * @param list1 the LinkedList of Strings (states) 
       */
-     public void printReversedList( List<String> list )
+     public void printReversedList( List<String> list1 )
      {
-         ListIterator<String> iterator = list.listIterator( list.size() );
+         ListIterator<String> iterator = list1.listIterator(list1.size() );
          
          while ( iterator.hasPrevious() )
          {

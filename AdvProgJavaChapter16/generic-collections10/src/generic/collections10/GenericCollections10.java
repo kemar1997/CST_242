@@ -35,7 +35,7 @@ public class GenericCollections10 extends Application
     public void start(Stage primaryStage) 
     {
         textAreaResults = new TextArea();
-        textAreaResults.setPrefSize(380, 375);
+        textAreaResults.setPrefSize(380, 125);
         textAreaResults.setEditable(false);
 
         buttonCollectionTest = new Button("Collection Test");
@@ -46,7 +46,7 @@ public class GenericCollections10 extends Application
         vBoxResults.setPadding( new Insets(10) );
         vBoxResults.setAlignment(Pos.CENTER);
 
-        Scene scene = new Scene(vBoxResults, 400, 450);
+        Scene scene = new Scene(vBoxResults, 400, 200);
 
         primaryStage.setTitle("Collections.sort()");
         primaryStage.setScene(scene);

@@ -52,3 +52,7 @@ Contains the styling for the JavaFX application.
     -fx-effect: innershadow(gaussian, whitesmoke, 15, 0, 0, 0);
 }
 
+#tfMorseCodePhrase {
+    -fx-padding: 15px;
+}
+

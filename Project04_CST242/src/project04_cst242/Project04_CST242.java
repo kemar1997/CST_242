@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -39,6 +40,8 @@ public class Project04_CST242 extends Application {
     
     TextArea taResults;
     
+    HBox hBoxButtons;
+    
     VBox vBoxLabels;
     VBox vBoxTextFields;
     VBox vBoxResults;
@@ -46,8 +49,8 @@ public class Project04_CST242 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        lblHeader = new Label("Morse Code");
-        lblHeader.setMinWidth(750);
+        lblHeader = new Label("Morse Code Translator");
+        lblHeader.setMinWidth(760);
         lblHeader.setAlignment(Pos.CENTER);
         lblHeader.getStyleClass().add("lblHeader");
         
@@ -62,14 +65,14 @@ public class Project04_CST242 extends Application {
         
         tfEnglishPhrase = new TextField();
         tfMorseCodePhrase = new TextField();
-        tfMorseCodePhrase.setPadding( new Insets(15) );
+        tfMorseCodePhrase.setId("tfMorseCodePhrase");
         
         vBoxTextFields = new VBox(5, tfEnglishPhrase, tfMorseCodePhrase);
         vBoxTextFields.setPadding( new Insets(10) );
         vBoxTextFields.getStyleClass().addAll("vBox");
         
         taResults = new TextArea();
-        taResults.setPrefSize(250, 300);
+        taResults.setPrefSize(250, 190);
         taResults.setEditable(false);
         
         btnEncode = new Button("Encode");
@@ -80,7 +83,9 @@ public class Project04_CST242 extends Application {
         btnDecode.setId("glass-grey");
         btnDecode.setOnAction( e -> decode(e) );
         
-        vBoxResults = new VBox(10, taResults, btnEncode, btnDecode);
+        hBoxButtons = new HBox(10, btnEncode, btnDecode);
+        
+        vBoxResults = new VBox(10, taResults, hBoxButtons);
         vBoxResults.setPadding( new Insets(10) );
         vBoxResults.getStyleClass().addAll("vBox");
         
@@ -91,11 +96,12 @@ public class Project04_CST242 extends Application {
         
         grid.addRow(1, vBoxLabels, vBoxTextFields, vBoxResults);
         
-        Scene scene = new Scene(grid, 750, 375);
+        Scene scene = new Scene(grid, 750, 240);
         scene.getStylesheets().add(getClass().getResource("stylesheet.css")
                 .toString());
         
         primaryStage.setTitle("Morse Code Encoding / English Language Conversion");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
         

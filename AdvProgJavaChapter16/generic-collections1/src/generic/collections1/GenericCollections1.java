@@ -43,7 +43,7 @@ public class GenericCollections1 extends Application
 
         buttonCollectionTest = new Button("Collection Test");
         buttonCollectionTest.setStyle("-fx-text-fill: white; -fx-background-color: midnightblue; -fx-font-weight: bold;");
-        buttonCollectionTest.setOnAction(e -> collectionTest(e));
+        buttonCollectionTest.setOnAction( e -> collectionTest(e) );
 
         VBox vBoxResults = new VBox(10, textAreaResults, buttonCollectionTest);
         vBoxResults.setPadding(new Insets(10));
@@ -71,7 +71,7 @@ public class GenericCollections1 extends Application
 
         for (double number : numbers) 
         {
-            list.add(number); // auto-boxing
+            list.add(number);
         }
 
         // Create an ArrayList of Doubles to be removed from the first ArrayList
@@ -86,7 +86,7 @@ public class GenericCollections1 extends Application
         // Output the ArrayList to the TextArea
         output.append("ArrayList:\n");
 
-        for (double number : list) // auto-unboxing
+        for (double number : list) 
         {
             output.append(number);
             output.append("  ");
@@ -98,7 +98,7 @@ public class GenericCollections1 extends Application
 
         output.append("\nArrayList after calling removeNumbers():\n");
 
-        for (double number : list) // auto-unboxing
+        for (double number : list) 
         {
             output.append(number);
             output.append("  ");
@@ -108,7 +108,8 @@ public class GenericCollections1 extends Application
     }
 
     /**
-     *
+     * Removes the element contained in list2 from list1.
+     * 
      * @param list the List of Doubles
      * @param removeList the List of Doubles to be removed from the first List
      */

@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 
 import java.util.List;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 /**
  * A JavaFX application that demonstrates the List control and method
@@ -52,15 +52,14 @@ public class GenericCollections7 extends Application
 
         Scene scene = new Scene(vBoxResults, 400, 450);
 
-        primaryStage.setTitle("Collections.sort()");
+        primaryStage.setTitle("Collections Methods");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     /**
-     * Create a List of Double values from an array and sort it both in forward
-     * and reverse. Display the List before sorting and then again at each
-     * operation sort (forward and reverse).
+     * Create a List of random Double values and after displaying it once call 
+     * methods reverse() copy() and fill() on the list.
      *
      * @param event the ActionEvent parameter
      */
@@ -74,35 +73,39 @@ public class GenericCollections7 extends Application
         
         for (int ctr = 0; ctr < numbers.length; ctr++)
         {
-            numbers[ctr] = random.nextDouble();
+            numbers[ctr] = 1 + random.nextDouble() * 10;
         }
         
         List<Double> list = Arrays.asList(numbers);
-        outputList("The list contains:\n", list);
+        outputList("The original list:", list);
         
         Collections.reverse(list);
-        outputList("\nAfter calling reverse(), the list contains:\n", list);
+        outputList("\nAfter calling method reverse():", list);
         
-        Double[] numbersCopy = new Double[3];
-        List<Double> copyList = Arrays.asList(numbersCopy);
-        Collections.copy(copyList, list);
-        outputList("\nAfter calling copy(), new List copyList contains:\n", copyList);
+        List<Double> copyList = new ArrayList();
+        copyList.add(1.0);  // Comment this out for a smaller list
+        copyList.add(2.0);
+        copyList.add(3.0);
+
+        Collections.copy(list, copyList);
+        outputList("\nAfter calling method copy():", list);
         
-        double number = Double.parseDouble(JOptionPane.showInputDialog("Enter a final number") );
-        Collections.fill(list, number);
-        outputList("\nAfter calling fill(), the list contains:\n", list);
+        Collections.fill(list, 47.0);
+        outputList("\nAfter calling method fill():", list);
 
         textAreaResults.setText( output.toString() );
     }
     
     /**
+     * Output the elements of a List of Doubles with a descriptive message.
      * 
-     * @param list 
+     * @param message the descriptive message
+     * @param list the List of Doubles
      */
     private void outputList(String message, List<Double> list)
     {
         output.append(message);
-        output.append("    The list is: ");
+        output.append("\n   The list is: ");
         
         for (double element : list)
         {
