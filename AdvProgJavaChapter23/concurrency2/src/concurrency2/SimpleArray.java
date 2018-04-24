@@ -12,8 +12,8 @@ import java.util.Arrays;
  */
 public class SimpleArray 
 {
-    private final int array[];   // The shared integer array
-    private int writeIndex;  // The index of next element to be written
+    private final int array[]; // The shared integer array
+    private int writeIndex;    // The index of next element to be written
     private final Random randomGenerator;
 
     /**
@@ -31,9 +31,10 @@ public class SimpleArray
     }
 
     /**
-     * Adds a value to the shared array after the thread is put to sleep for 
-     * zero (0) to 499 milliseconds. The 'writeIndex' is synchronized and incremented  
-     * between the threads.
+     * Adds a value to an element of the shared array after the thread is put 
+     * to sleep for between zero (0) to 499 milliseconds. The method is synchronized 
+     * so the next task must wait until the current method is finished with the 
+     * method and releases the lock.
      * 
      * @param value the value added to the shared array
      */
@@ -54,11 +55,9 @@ public class SimpleArray
 
         array[position] = value;
 
-        System.out.printf("%s wrote %d to element %d%n", Thread.currentThread().getName(), value, position);
+        System.out.printf("%s wrote %d to element %d%n%n", Thread.currentThread().getName(), value, position);
 
-        writeIndex++; // increment index of element to be written next
-
-        System.out.printf("Next write index: %d%n%n", writeIndex);
+        writeIndex++;
     }
 
     /**

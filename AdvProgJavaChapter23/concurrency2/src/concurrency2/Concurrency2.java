@@ -17,8 +17,8 @@ public class Concurrency2
      * to the shared SimpleArray object, execute the tasks with an ExecutorService
      * object and prints the print contents of the array when the tasks are
      * complete.  Displays an error message if it takes one minute for both 
-     * writers to finish executing.  May throw an InterruptedException if the 
-     * sleeping thread’s interrupt() method is called.
+     * writers to finish executing.  May throw an InterruptedException for 
+     * the ExecutorService's awaitTermination() method.
      * 
      * @param args the command line String[] array arguments
      */

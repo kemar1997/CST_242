@@ -23,7 +23,7 @@ public class PrintTask implements Runnable
         this.taskName = taskName;
         
         Random randomGenerator = new Random();
-        sleepTime = randomGenerator.nextInt(5000) + 1;
+        sleepTime = randomGenerator.nextInt(5001);
     }
     
     /**
