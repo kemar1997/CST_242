@@ -38,6 +38,8 @@
             this.checkBoxNonSmoker = new System.Windows.Forms.CheckBox();
             this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.listBoxQuote = new System.Windows.Forms.ListBox();
+            this.buttonGetQuote = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +60,6 @@
             this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Age";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxName
             // 
@@ -140,11 +141,32 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Where Does Insured Live?";
             // 
+            // listBoxQuote
+            // 
+            this.listBoxQuote.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listBoxQuote.FormattingEnabled = true;
+            this.listBoxQuote.Location = new System.Drawing.Point(0, 429);
+            this.listBoxQuote.Name = "listBoxQuote";
+            this.listBoxQuote.Size = new System.Drawing.Size(284, 95);
+            this.listBoxQuote.TabIndex = 8;
+            // 
+            // buttonGetQuote
+            // 
+            this.buttonGetQuote.Location = new System.Drawing.Point(71, 371);
+            this.buttonGetQuote.Name = "buttonGetQuote";
+            this.buttonGetQuote.Size = new System.Drawing.Size(87, 23);
+            this.buttonGetQuote.TabIndex = 9;
+            this.buttonGetQuote.Text = "Get Quote";
+            this.buttonGetQuote.UseVisualStyleBackColor = true;
+            this.buttonGetQuote.Click += new System.EventHandler(this.buttonGetQuote_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 524);
+            this.Controls.Add(this.buttonGetQuote);
+            this.Controls.Add(this.listBoxQuote);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxRegion);
             this.Controls.Add(this.checkBoxNonSmoker);
@@ -173,6 +195,8 @@
         private System.Windows.Forms.CheckBox checkBoxNonSmoker;
         private System.Windows.Forms.ComboBox comboBoxRegion;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox listBoxQuote;
+        private System.Windows.Forms.Button buttonGetQuote;
     }
 }
 

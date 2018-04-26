@@ -17,7 +17,7 @@ namespace WindowsForms1
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void buttonGetQuote_Click(object sender, EventArgs e)
         {
 
         }
