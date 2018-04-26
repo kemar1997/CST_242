@@ -40,7 +40,7 @@ namespace WindowsForms1
         ///     No item is selected from the 'Region' ComboBox
         /// </summary>
         /// <param name="sender">A reference to the Button object</param>
-        /// <param name="e">A reference to the click event</param>
+        /// <param name="e">A reference to the Click event</param>
         private void buttonGetQuote_Click(object sender, EventArgs e)
         {
             try

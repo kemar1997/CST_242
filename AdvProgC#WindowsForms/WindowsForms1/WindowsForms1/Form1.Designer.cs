@@ -33,8 +33,8 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxAge = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
+            this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.checkBoxNonSmoker = new System.Windows.Forms.CheckBox();
             this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -86,17 +86,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
             // 
-            // radioButtonFemale
-            // 
-            this.radioButtonFemale.AutoSize = true;
-            this.radioButtonFemale.Location = new System.Drawing.Point(7, 20);
-            this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(59, 17);
-            this.radioButtonFemale.TabIndex = 0;
-            this.radioButtonFemale.TabStop = true;
-            this.radioButtonFemale.Text = "Female";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
-            // 
             // radioButtonMale
             // 
             this.radioButtonMale.AutoSize = true;
@@ -107,6 +96,17 @@
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Male";
             this.radioButtonMale.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonFemale
+            // 
+            this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.Location = new System.Drawing.Point(7, 20);
+            this.radioButtonFemale.Name = "radioButtonFemale";
+            this.radioButtonFemale.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonFemale.TabIndex = 0;
+            this.radioButtonFemale.TabStop = true;
+            this.radioButtonFemale.Text = "Female";
+            this.radioButtonFemale.UseVisualStyleBackColor = true;
             // 
             // checkBoxNonSmoker
             // 
@@ -145,7 +145,7 @@
             // 
             this.listBoxQuote.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxQuote.FormattingEnabled = true;
-            this.listBoxQuote.Location = new System.Drawing.Point(0, 429);
+            this.listBoxQuote.Location = new System.Drawing.Point(0, 409);
             this.listBoxQuote.Name = "listBoxQuote";
             this.listBoxQuote.Size = new System.Drawing.Size(284, 95);
             this.listBoxQuote.TabIndex = 8;
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 524);
+            this.ClientSize = new System.Drawing.Size(284, 504);
             this.Controls.Add(this.buttonGetQuote);
             this.Controls.Add(this.listBoxQuote);
             this.Controls.Add(this.label3);
@@ -175,7 +175,12 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Insurance Quote";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
