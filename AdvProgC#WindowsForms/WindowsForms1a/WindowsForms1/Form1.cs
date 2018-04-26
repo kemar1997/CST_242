@@ -118,7 +118,7 @@ namespace WindowsForms1
         /// <returns>The part of the insurance quote based the region of residence</returns>
         private int getRegionCharge()
         {
-            if (comboBoxRegion.SelectedItem.ToString() == "")
+            if (comboBoxRegion.SelectedIndex <= 0)
             {
                 throw new Exception("Region of residence not selected");
             }
