@@ -435,12 +435,12 @@ namespace WindowsFormsDatabase1
         {
             try
             {
-                DataSet pdsPublisherUpdate = dataSetPublisher.GetChanges();
+                DataSet dataSetPublisherUpdate = dataSetPublisher.GetChanges();
 
-                if (pdsPublisherUpdate != null)
+                if (dataSetPublisherUpdate != null)
                 {
-                    dataAdapterPublisher.Update(pdsPublisherUpdate);
-                    pdsPublisherUpdate.AcceptChanges();
+                    dataAdapterPublisher.Update(dataSetPublisherUpdate);
+                    dataSetPublisherUpdate.AcceptChanges();
                 }
             }
 
