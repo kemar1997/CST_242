@@ -1,0 +1,11 @@
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\bin\Debug\WindowsFormsDatabase1.exe.config
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\bin\Debug\WindowsFormsDatabase1.exe
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\bin\Debug\WindowsFormsDatabase1.pdb
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.Form1.resources
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.Properties.Resources.resources
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.csproj.GenerateResource.Cache
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.exe
+T:\CBStruck\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.pdb
+C:\Users\Carl\Documents\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\bin\Debug\WindowsFormsDatabase1.exe.config
+C:\Users\Carl\Documents\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.exe
+C:\Users\Carl\Documents\CST242\AdvProgCSWindowsFormsDatabase\WindowsFormsDatabase1\WindowsFormsDatabase1\obj\Debug\WindowsFormsDatabase1.pdb

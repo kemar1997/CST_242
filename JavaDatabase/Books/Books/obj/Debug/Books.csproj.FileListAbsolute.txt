@@ -31,3 +31,4 @@ E:\CST_242\JavaDatabase\Books\Books\bin\Microsoft.CodeDom.Providers.DotNetCompil
 E:\CST_242\JavaDatabase\Books\Books\obj\Debug\Books.csprojResolveAssemblyReference.cache
 E:\CST_242\JavaDatabase\Books\Books\obj\Debug\Books.dll
 E:\CST_242\JavaDatabase\Books\Books\obj\Debug\Books.pdb
+E:\CST_242\JavaDatabase\Books\Books\obj\Debug\Books.csproj.CoreCompileInputs.cache
