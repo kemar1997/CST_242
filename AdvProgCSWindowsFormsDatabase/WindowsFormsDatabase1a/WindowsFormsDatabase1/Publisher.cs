@@ -114,7 +114,7 @@ namespace WindowsFormsDatabase1
         private OleDbCommand insertCommand(OleDbCommand commandPublisherInsert)
         {
             commandPublisherInsert.Connection = connectionPublisher;
-            commandPublisherInsert.CommandText = "INSERT INTO Book VALUES (?, ?, ?)";
+            commandPublisherInsert.CommandText = "INSERT INTO Publisher VALUES (?, ?, ?)";
 
             OleDbParameter parameterInsertPublisherCode = new OleDbParameter("PublisherCode", OleDbType.VarChar, 2, "PublisherCode");
             OleDbParameter parameterInsertName = new OleDbParameter("Name", OleDbType.VarChar, 20, "Name");
