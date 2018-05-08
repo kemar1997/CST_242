@@ -46,12 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Books.cs" />
-    <Compile Include="BooksByPublisher.cs">
+    <Compile Include="BooksClass.cs" />
+    <Compile Include="FindPublisherByCode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BooksByPublisher.Designer.cs">
-      <DependentUpon>BooksByPublisher.cs</DependentUpon>
+    <Compile Include="FindPublisherByCode.Designer.cs">
+      <DependentUpon>FindPublisherByCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindPublisherByName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindPublisherByName.Designer.cs">
+      <DependentUpon>FindPublisherByName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PublisherTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PublisherTable.Designer.cs">
+      <DependentUpon>PublisherTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Publisher.cs">
       <SubType>Form</SubType>
@@ -61,8 +73,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BooksByPublisher.resx">
-      <DependentUpon>BooksByPublisher.cs</DependentUpon>
+    <EmbeddedResource Include="FindPublisherByCode.resx">
+      <DependentUpon>FindPublisherByCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindPublisherByName.resx">
+      <DependentUpon>FindPublisherByName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PublisherTable.resx">
+      <DependentUpon>PublisherTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Publisher.resx">
       <DependentUpon>Publisher.cs</DependentUpon>

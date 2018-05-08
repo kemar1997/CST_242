@@ -12,7 +12,7 @@ using System.Data.OleDb;
 namespace WindowsFormsDatabase1
 {
     /// <summary>
-    /// A Windows Form to run the "Publisher" table application.
+    /// A Windows Forms application to process the "Publisher" table.
     /// </summary>
     public partial class Publisher : Form
     {
@@ -30,7 +30,7 @@ namespace WindowsFormsDatabase1
         private int index;
         
         /// <summary>
-        /// Constants used to indicate the machine state for the "Publisher" table application.
+        /// Constants used to represent the machine "state" for the "Publisher" table application.
         /// </summary>
         private enum EditState
         {
@@ -39,10 +39,13 @@ namespace WindowsFormsDatabase1
             EDITING
         }
 
+        /// <summary>
+        /// Variable to store the current machine "state" of the "Publisher" table application.
+        /// </summary>
         private EditState editState;
 
         /// <summary>
-        /// 
+        /// Calls the "designer" methods to draw the "Publisher" Windows Forms object.
         /// </summary>
         public Publisher()
         {
@@ -55,13 +58,13 @@ namespace WindowsFormsDatabase1
         /// and finds and displays the first record.
         /// </summary>
         /// <param name="sender">Reference to the Form object</param>
-        /// <param name="e">Reference to the load event of the Form object</param>
+        /// <param name="e">Reference to the Load event of the Form object</param>
         public void Form1_Load(object sender, EventArgs e)
         {
             try
             {
                 connectionPublisher = new OleDbConnection();
-                connectionPublisher.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|Books.mdb;User Id=admin;Password=;";
+                connectionPublisher.ConnectionString = BooksClass.booksConnectionString;
                 //connectionPublisher.ConnectionString = Configuration ConnectionStrings["connectionStringBooks"].ToString();
 
                 // *** Creating the SQL SELECT command and creating a DataTable containing the Book table rows ***
@@ -123,7 +126,7 @@ namespace WindowsFormsDatabase1
             commandPublisherInsert.Parameters.Add(parameterInsertPublisherCode);
             commandPublisherInsert.Parameters.Add(parameterInsertName);
             commandPublisherInsert.Parameters.Add(parameterInsertCity);
-
+            
             return commandPublisherInsert;
         }
 
@@ -200,7 +203,7 @@ namespace WindowsFormsDatabase1
         /// <summary>
         /// Sets the current machine state of the "Publisher" table application.
         /// </summary>
-        /// <param name="editState">An 'EditState' enum that specifies the current machine state</param>
+        /// <param name="editState">An EditState enum that specifies the current machine state</param>
         private void updateState(EditState editState)
         {
             this.editState = editState;
@@ -298,21 +301,21 @@ namespace WindowsFormsDatabase1
         }
 
         /// <summary>
-        /// Instantiates and displays the 'BooksByPublisher' form
+        /// Instantiates and displays the 'BooksByPublisher' form.
         /// </summary>
         /// <param name="sender">Reference to the 'booksByPublisherToolStripMenuItem' menu item object</param>
-        /// <param name="e">Reference to the click event of the 'booksByPublisherToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'booksByPublisherToolStripMenuItem' menu item object</param>
         private void booksByPublisherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BooksByPublisher booksByPublisher = new BooksByPublisher();
-            booksByPublisher.Show();
+            PublisherTable publisherTable = new PublisherTable();
+            publisherTable.Show();
         }
 
         /// <summary>
-        /// Closes the 'Publishers' windows form and ends the application
+        /// Closes the "Publishers" Windows Form and ends the application.
         /// </summary>
         /// <param name="sender">Reference to the 'exitToolStripMenuItem' menu item object</param>
-        /// <param name="e">Reference to the click event of the 'exitToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'exitToolStripMenuItem' menu item object</param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             connectionPublisher.Close();
@@ -320,10 +323,10 @@ namespace WindowsFormsDatabase1
         }
 
         /// <summary>
-        /// Moves to a specific record based upon which button was clicked on the ToolStrip toolbar
+        /// Moves to a specific record based upon which button was clicked on the ToolStrip toolbar.
         /// </summary>
         /// <param name="sender">Reference to the 'toolStripPublisher' tool bar object</param>
-        /// <param name="e">Reference to the click event of the 'toolStripPublisher' tool bar object</param>
+        /// <param name="e">Reference to the ItemClicked event of the 'toolStripPublisher' tool bar object</param>
         private void toolStripPublisher_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             switch (e.ClickedItem.ToolTipText)
@@ -357,7 +360,7 @@ namespace WindowsFormsDatabase1
             textBoxName.Clear();
             textBoxCity.Clear();
 
-            statusStripRecordCounter.Items[0].Text = "New Record";
+            toolStripStatusLabel1.Text = "New Record";
             updateState(EditState.ADDING);
         }
 
@@ -385,8 +388,8 @@ namespace WindowsFormsDatabase1
                     DataRow dataRowNewPublisher = dataTablePublisher.NewRow();
 
                     dataRowNewPublisher["PublisherCode"] = textBoxPublisherCode.Text.ToUpper();
-                    dataRowNewPublisher["Name"] = textBoxName.Text.ToUpper();
-                    dataRowNewPublisher["City"] = textBoxCity.Text.ToUpper();
+                    dataRowNewPublisher["Name"] = textBoxName.Text;
+                    dataRowNewPublisher["City"] = textBoxCity.Text;
 
                     dataTablePublisher.Rows.Add(dataRowNewPublisher);
                     index = dataTablePublisher.Rows.Count - 1;
@@ -395,13 +398,15 @@ namespace WindowsFormsDatabase1
                 }
                 else if (this.editState == EditState.EDITING)
                 {
-                    dataTablePublisher.Rows[index].BeginEdit();
+                    DataRow dataRowEditPublisher = dataTablePublisher.Rows[index];
 
-                    //dataTablePublisher.Rows[index].Items["Title"] = textBoxPublisherCode.Text.ToUpper();
+                    dataRowEditPublisher.BeginEdit();
 
+                    dataRowEditPublisher["PublisherCode"] = textBoxPublisherCode.Text.ToUpper();
+                    dataRowEditPublisher["Name"] = textBoxName.Text;
+                    dataRowEditPublisher["City"] = textBoxCity.Text;
 
-                    dataTablePublisher.Rows[index].EndEdit();
-
+                    dataRowEditPublisher.EndEdit();
                 }
 
                 savePublisher();
@@ -416,7 +421,7 @@ namespace WindowsFormsDatabase1
             catch (System.Data.ConstraintException ex)
             {
                 dataTablePublisher.Rows[index].CancelEdit();
-                MessageBox.Show("Duplicate Book number", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Duplicate publisher code", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             catch (System.Exception ex)
@@ -454,7 +459,7 @@ namespace WindowsFormsDatabase1
         /// Cancels a "new" or "edit" publisher record operation.
         /// </summary>
         /// <param name="sender">Reference to the 'undoToolStripMenuItem' menu item object</param>
-        /// <param name="e">Reference to the click event of the 'undoToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'undoToolStripMenuItem' menu item object</param>
         private void undoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             findRow();
@@ -462,30 +467,89 @@ namespace WindowsFormsDatabase1
         }
 
         /// <summary>
-        /// 
+        /// Deletes the currently viewed publisher record.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void findByCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="sender">Reference to the 'deleteToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'deleteToolStripMenuItem' menu item object</param>
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if ( MessageBox.Show("Really delete this title?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes )
+            {
+                DataRow dataRowBook = dataTablePublisher.Rows[index];
+                dataRowBook.Delete();
+
+                savePublisher();
+                index = 0;
+                findRow();
+                updateState(EditState.NOT_EDITING);
+            }
         }
 
         /// <summary>
-        /// 
+        /// Opens the 'FindByPublisherByCode' form and finds a publisher record by publisher code.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void findByTitleToolStripMenuItem_Click(object sender, EventArgs e)
+        /// <param name="sender">Reference to the 'findByCodeToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'findByCodeToolStripMenuItem' menu item object</param>
+        private void findByCodeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FindPublisherByCode findPublisherByCode = new FindPublisherByCode();
+            findPublisherByCode.Text = "Find Publisher by Code";
+            findPublisherByCode.ShowDialog();
 
+            String publisherCode = findPublisherByCode.getFindString();
+
+            findPublisherByCode.Close();
+
+            if (publisherCode.Length > 0)
+            {
+                DataRow dataRowFindByCode = dataTablePublisher.Rows.Find(publisherCode);
+
+                if (dataRowFindByCode != null)
+                {
+                    index = dataTablePublisher.Rows.IndexOf(dataRowFindByCode);
+                    currentRecord(dataRowFindByCode);
+                    updateState(EditState.NOT_EDITING);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Opens the 'FindByPublisherByName' form and finds a publisher record by publisher name.
+        /// </summary>
+        /// <param name="sender">Reference to the 'findByNameToolStripMenuItem' menu item object</param>
+        /// <param name="e">Reference to the Click event of the 'findByNameToolStripMenuItem' menu item object</param>
+        private void findByNameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindPublisherByName findPublisherByName = new FindPublisherByName();
+            findPublisherByName.Text = "Find Publisher by Name";
+            findPublisherByName.ShowDialog();
+
+            String stringPublisher = findPublisherByName.getFindString();
+
+            findPublisherByName.Close();
+
+            if (stringPublisher.Length > 0)
+            {
+                int indexPublisherCode = stringPublisher.LastIndexOf(" ");
+
+                String publisherCode = stringPublisher.Substring(indexPublisherCode + 1);
+
+                DataRow dataRowFindByName = dataTablePublisher.Rows.Find(publisherCode);
+
+                if (dataRowFindByName != null)
+                {
+                    index = dataTablePublisher.Rows.IndexOf(dataRowFindByName);
+                    currentRecord(dataRowFindByName);
+                    updateState(EditState.NOT_EDITING);
+                }
+            }
         }
 
         /// <summary>
         /// Cancels the closing of the Form if the current machine state is ADDING or EDITING.
         /// </summary>
         /// <param name="sender">Reference to the Form object</param>
-        /// <param name="e">Reference to the closing event of the Form object</param>
+        /// <param name="e">Reference to the FormClosingEventArgs event of the Form object</param>
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             if (editState == EditState.ADDING || editState == EditState.EDITING)

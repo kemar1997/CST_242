@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStripPublisher = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.booksByPublisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.publisherTableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +42,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findPublisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findByCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.findByTitleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findByNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripRecordCounter = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripPublisher = new System.Windows.Forms.ToolStrip();
@@ -63,10 +63,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(61, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(81, 79);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Publisher Code:";
             // 
@@ -79,32 +78,32 @@
             this.findPublisherToolStripMenuItem});
             this.menuStripPublisher.Location = new System.Drawing.Point(0, 0);
             this.menuStripPublisher.Name = "menuStripPublisher";
-            this.menuStripPublisher.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStripPublisher.Size = new System.Drawing.Size(352, 24);
+            this.menuStripPublisher.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStripPublisher.Size = new System.Drawing.Size(469, 28);
             this.menuStripPublisher.TabIndex = 1;
             this.menuStripPublisher.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.booksByPublisherToolStripMenuItem,
+            this.publisherTableToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // booksByPublisherToolStripMenuItem
+            // publisherTableToolStripMenuItem
             // 
-            this.booksByPublisherToolStripMenuItem.Name = "booksByPublisherToolStripMenuItem";
-            this.booksByPublisherToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.booksByPublisherToolStripMenuItem.Text = "Books by Publisher";
-            this.booksByPublisherToolStripMenuItem.Click += new System.EventHandler(this.booksByPublisherToolStripMenuItem_Click);
+            this.publisherTableToolStripMenuItem.Name = "publisherTableToolStripMenuItem";
+            this.publisherTableToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.publisherTableToolStripMenuItem.Text = "Publisher Table";
+            this.publisherTableToolStripMenuItem.Click += new System.EventHandler(this.booksByPublisherToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -117,14 +116,14 @@
             this.undoToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
@@ -132,7 +131,7 @@
             // 
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(185, 26);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
@@ -140,7 +139,7 @@
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
             this.updateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
@@ -148,7 +147,7 @@
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.undoToolStripMenuItem.Text = "Undo";
             this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
@@ -156,50 +155,51 @@
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // findPublisherToolStripMenuItem
             // 
             this.findPublisherToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.findByCodeToolStripMenuItem,
-            this.findByTitleToolStripMenuItem});
+            this.findByNameToolStripMenuItem});
             this.findPublisherToolStripMenuItem.Name = "findPublisherToolStripMenuItem";
-            this.findPublisherToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.findPublisherToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
             this.findPublisherToolStripMenuItem.Text = "Find Publisher";
             // 
             // findByCodeToolStripMenuItem
             // 
             this.findByCodeToolStripMenuItem.Name = "findByCodeToolStripMenuItem";
             this.findByCodeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.findByCodeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.findByCodeToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.findByCodeToolStripMenuItem.Text = "Find by Code";
             this.findByCodeToolStripMenuItem.Click += new System.EventHandler(this.findByCodeToolStripMenuItem_Click);
             // 
-            // findByTitleToolStripMenuItem
+            // findByNameToolStripMenuItem
             // 
-            this.findByTitleToolStripMenuItem.Name = "findByTitleToolStripMenuItem";
-            this.findByTitleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F5)));
-            this.findByTitleToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.findByTitleToolStripMenuItem.Text = "Find by Name";
-            this.findByTitleToolStripMenuItem.Click += new System.EventHandler(this.findByTitleToolStripMenuItem_Click);
+            this.findByNameToolStripMenuItem.Name = "findByNameToolStripMenuItem";
+            this.findByNameToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F5)));
+            this.findByNameToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.findByNameToolStripMenuItem.Text = "Find by Name";
+            this.findByNameToolStripMenuItem.Click += new System.EventHandler(this.findByNameToolStripMenuItem_Click);
             // 
             // statusStripRecordCounter
             // 
             this.statusStripRecordCounter.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStripRecordCounter.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStripRecordCounter.Location = new System.Drawing.Point(0, 207);
+            this.statusStripRecordCounter.Location = new System.Drawing.Point(0, 236);
             this.statusStripRecordCounter.Name = "statusStripRecordCounter";
-            this.statusStripRecordCounter.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
-            this.statusStripRecordCounter.Size = new System.Drawing.Size(352, 22);
+            this.statusStripRecordCounter.Padding = new System.Windows.Forms.Padding(1, 0, 13, 0);
+            this.statusStripRecordCounter.Size = new System.Drawing.Size(469, 25);
             this.statusStripRecordCounter.TabIndex = 2;
             this.statusStripRecordCounter.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(151, 20);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // toolStripPublisher
@@ -210,9 +210,9 @@
             this.toolStripButtonPrevious,
             this.toolStripButtonNext,
             this.toolStripButtonLast});
-            this.toolStripPublisher.Location = new System.Drawing.Point(0, 24);
+            this.toolStripPublisher.Location = new System.Drawing.Point(0, 28);
             this.toolStripPublisher.Name = "toolStripPublisher";
-            this.toolStripPublisher.Size = new System.Drawing.Size(352, 27);
+            this.toolStripPublisher.Size = new System.Drawing.Size(469, 27);
             this.toolStripPublisher.TabIndex = 3;
             this.toolStripPublisher.Text = "toolStrip1";
             this.toolStripPublisher.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStripPublisher_ItemClicked);
@@ -260,52 +260,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 103);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(81, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(61, 142);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(81, 175);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(35, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "City:";
             // 
             // textBoxPublisherCode
             // 
-            this.textBoxPublisherCode.Location = new System.Drawing.Point(148, 59);
-            this.textBoxPublisherCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPublisherCode.Location = new System.Drawing.Point(197, 73);
+            this.textBoxPublisherCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxPublisherCode.Name = "textBoxPublisherCode";
-            this.textBoxPublisherCode.Size = new System.Drawing.Size(133, 20);
+            this.textBoxPublisherCode.Size = new System.Drawing.Size(176, 22);
             this.textBoxPublisherCode.TabIndex = 6;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(148, 99);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxName.Location = new System.Drawing.Point(197, 122);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(133, 20);
+            this.textBoxName.Size = new System.Drawing.Size(176, 22);
             this.textBoxName.TabIndex = 7;
             // 
             // textBoxCity
             // 
-            this.textBoxCity.Location = new System.Drawing.Point(148, 137);
-            this.textBoxCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCity.Location = new System.Drawing.Point(197, 169);
+            this.textBoxCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCity.Name = "textBoxCity";
-            this.textBoxCity.Size = new System.Drawing.Size(133, 20);
+            this.textBoxCity.Size = new System.Drawing.Size(176, 22);
             this.textBoxCity.TabIndex = 8;
             // 
             // Publisher
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 229);
+            this.ClientSize = new System.Drawing.Size(469, 261);
             this.Controls.Add(this.textBoxCity);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.textBoxPublisherCode);
@@ -317,7 +315,7 @@
             this.Controls.Add(this.menuStripPublisher);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStripPublisher;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "Publisher";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -340,7 +338,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStripPublisher;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem booksByPublisherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem publisherTableToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
@@ -350,7 +348,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findPublisherToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findByCodeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem findByTitleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findByNameToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStripRecordCounter;
         private System.Windows.Forms.ToolStrip toolStripPublisher;
         private System.Windows.Forms.ToolStripButton toolStripButtonFirst;
