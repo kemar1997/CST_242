@@ -15,7 +15,7 @@ namespace WindowsFormsDatabase1
         /// <summary>
         /// The "findString" is the publisher code returned from the TextBox.
         /// </summary>
-        String findString;
+        private String findString;
 
         /// <summary>
         /// Calls the "designer" methods to draw the "FindPublisherByCode" Windows Forms object.
