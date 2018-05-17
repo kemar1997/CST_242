@@ -19,7 +19,6 @@ E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.FindBook
 E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.FindBookByName.resources
 E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.Properties.Resources.resources
 E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.csproj.GenerateResource.Cache
-E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.csproj.CoreCompileInputs.cache
 E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.exe
 E:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.pdb
 D:\CST_242\Project11_CST242\Project11_CST242\obj\Debug\Project11_CST242.FindBookByCode.resources
